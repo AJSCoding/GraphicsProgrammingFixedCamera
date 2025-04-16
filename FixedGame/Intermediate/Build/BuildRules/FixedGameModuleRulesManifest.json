@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\UnrealProjects\\Jasons\\GraphicsProgrammingFixedCamera\\FixedGame\\Source\\FixedGame\\FixedGame.Build.cs",
+		"D:\\UnrealProjects\\Jasons\\GraphicsProgrammingFixedCamera\\FixedGame\\Source\\FixedGame.Target.cs",
+		"D:\\UnrealProjects\\Jasons\\GraphicsProgrammingFixedCamera\\FixedGame\\Source\\FixedGameEditor.Target.cs"
+	],
+	"EngineVersion": "5.5.3"
+}

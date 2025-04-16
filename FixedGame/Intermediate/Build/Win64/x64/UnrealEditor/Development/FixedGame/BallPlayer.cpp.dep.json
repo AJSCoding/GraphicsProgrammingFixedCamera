@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\unrealprojects\\jasons\\graphicsprogrammingfixedcamera\\fixedgame\\source\\fixedgame\\ballplayer.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unrealprojects\\jasons\\graphicsprogrammingfixedcamera\\fixedgame\\intermediate\\build\\win64\\x64\\fixedgameeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.cpp20.inclorderunreal5_3.h.pch",
+        "Includes": [
+            "d:\\unrealprojects\\jasons\\graphicsprogrammingfixedcamera\\fixedgame\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\fixedgame\\definitions.fixedgame.h",
+            "d:\\unrealprojects\\jasons\\graphicsprogrammingfixedcamera\\fixedgame\\source\\fixedgame\\ballplayer.h",
+            "d:\\unrealprojects\\jasons\\graphicsprogrammingfixedcamera\\fixedgame\\intermediate\\build\\win64\\unrealeditor\\inc\\fixedgame\\uht\\ballplayer.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
