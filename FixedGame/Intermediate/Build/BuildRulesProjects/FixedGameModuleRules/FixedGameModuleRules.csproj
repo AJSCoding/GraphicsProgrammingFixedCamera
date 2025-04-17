@@ -15,6 +15,7 @@
     <ProjectReference Include="..\..\..\..\..\..\..\..\UE_5.5\Engine\Source\Programs\UnrealBuildTool\UnrealBuildTool.csproj"><Private>false</Private></ProjectReference>
   </ItemGroup>
   <ItemGroup>
+  <Compile Include="..\..\..\..\Plugins\VisualStudioTools\Source\VisualStudioTools\VisualStudioTools.Build.cs"><Link>Plugins\VisualStudioTools\Source\VisualStudioTools\VisualStudioTools.Build.cs</Link></Compile>
   <Compile Include="..\..\..\..\Source\FixedGame.Target.cs"><Link>Source\FixedGame.Target.cs</Link></Compile>
   <Compile Include="..\..\..\..\Source\FixedGameEditor.Target.cs"><Link>Source\FixedGameEditor.Target.cs</Link></Compile>
   <Compile Include="..\..\..\..\Source\FixedGame\FixedGame.Build.cs"><Link>Source\FixedGame\FixedGame.Build.cs</Link></Compile>

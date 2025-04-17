@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\unrealprojects\\jasons\\graphicsprogrammingfixedcamera\\fixedgame\\source\\fixedgame\\ballplayer.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unrealprojects\\jasons\\graphicsprogrammingfixedcamera\\fixedgame\\intermediate\\build\\win64\\x64\\fixedgameeditor\\debuggame\\unrealed\\sharedpch.unrealed.project.nonoptimized.valapi.cpp20.inclorderunreal5_3.h.pch",
+        "Includes": [
+            "d:\\unrealprojects\\jasons\\graphicsprogrammingfixedcamera\\fixedgame\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\fixedgame\\definitions.fixedgame.h",
+            "d:\\unrealprojects\\jasons\\graphicsprogrammingfixedcamera\\fixedgame\\source\\fixedgame\\ballplayer.h",
+            "d:\\unrealprojects\\jasons\\graphicsprogrammingfixedcamera\\fixedgame\\intermediate\\build\\win64\\unrealeditor\\inc\\fixedgame\\uht\\ballplayer.generated.h",
+            "d:\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\gameframework\\springarmcomponent.h",
+            "d:\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\springarmcomponent.generated.h",
+            "d:\\ue_5.5\\engine\\source\\runtime\\engine\\classes\\camera\\cameracomponent.h",
+            "d:\\ue_5.5\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\cameracomponent.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

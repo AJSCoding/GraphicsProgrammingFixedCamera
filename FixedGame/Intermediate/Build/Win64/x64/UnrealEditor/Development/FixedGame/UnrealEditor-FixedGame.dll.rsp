@@ -37,11 +37,15 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 "D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\FixedGameEditor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.InclOrderUnreal5_3.h.obj"
+"D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\FixedGame\BallGameModeBase.gen.cpp.obj"
 "D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\FixedGame\BallPlayer.gen.cpp.obj"
 "D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\FixedGame\FixedGame.init.gen.cpp.obj"
-"D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\FixedGame\BallPlayer.cpp.obj"
+"D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\FixedGame\Item.gen.cpp.obj"
 "D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\FixedGame\FixedGame.cpp.obj"
 "D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\FixedGame\PerModuleInline.gen.cpp.obj"
+"D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\FixedGame\BallGameModeBase.cpp.obj"
+"D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\FixedGame\BallPlayer.cpp.obj"
+"D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\FixedGame\Item.cpp.obj"
 "D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\Intermediate\Build\Win64\x64\UnrealEditor\Development\FixedGame\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\UnrealEditor-Engine.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"

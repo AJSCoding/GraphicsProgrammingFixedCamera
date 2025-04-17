@@ -10,8 +10,9 @@
     <DebuggerFlavor>WindowsRemoteDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugGame_Editor|x64'">
-    <LocalDebuggerCommandArguments>"$(SolutionDir)FixedGame.uproject" -skipcompile</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>"D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\FixedGame.uproject" -skipcompile</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <RemoteDebuggerCommandArguments>"D:\UnrealProjects\Jasons\GraphicsProgrammingFixedCamera\FixedGame\FixedGame.uproject" -skipcompile</RemoteDebuggerCommandArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win64_arm64_DebugGame_Editor|x64'">
     <RemoteDebuggerCommandArguments>"$(SolutionDir)FixedGame.uproject" -skipcompile</RemoteDebuggerCommandArguments>
