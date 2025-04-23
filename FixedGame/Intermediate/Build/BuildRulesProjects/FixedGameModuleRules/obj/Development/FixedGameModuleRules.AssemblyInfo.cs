@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FixedGameModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3addeaab169f40532f047f8960a9bb6de99612f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+738083f3605a6eb05ea2f070a3a3ee1184e6114c")]
 [assembly: System.Reflection.AssemblyProductAttribute("FixedGameModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FixedGameModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

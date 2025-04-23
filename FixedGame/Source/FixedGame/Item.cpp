@@ -23,12 +23,40 @@ void AItem::BeginPlay()
 	Super::BeginPlay();
 	
 }
-void AItem::OverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void AItem::OverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+    UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
+    bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (Cast<ABallPlayer>(OtherActor) != nullptr)
-	{
-		Collected();
-	}
+    if (!IsValid(OtherActor))
+    {
+        UE_LOG(LogTemp, Warning, TEXT("OverlapBegin: OtherActor is invalid or null."));
+        return;
+    }
+
+    // Log what we hit
+    UE_LOG(LogTemp, Warning, TEXT("OverlapBegin: Hit %s (Class: %s)"),
+        *OtherActor->GetName(),
+        *OtherActor->GetClass()->GetName());
+
+    // Defensive check: only continue if it's a subclass of ABallPlayer
+    if (OtherActor->IsA<ABallPlayer>())
+    {
+        ABallPlayer* Player = Cast<ABallPlayer>(OtherActor);
+
+        if (IsValid(Player))
+        {
+            UE_LOG(LogTemp, Warning, TEXT("OverlapBegin: Cast succeeded, calling Collected."));
+            Collected();
+        }
+        else
+        {
+            UE_LOG(LogTemp, Error, TEXT("OverlapBegin: Cast to ABallPlayer failed despite IsA check."));
+        }
+    }
+    else
+    {
+        UE_LOG(LogTemp, Warning, TEXT("OverlapBegin: OtherActor is not a BallPlayer."));
+    }
 }
 
 void AItem::Collected_Implementation()

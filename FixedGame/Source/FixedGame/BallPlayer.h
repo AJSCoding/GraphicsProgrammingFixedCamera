@@ -24,7 +24,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category= "Components")
-	UStaticMeshComponent* Mesh;
+	UStaticMeshComponent* PlayerMesh;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	USpringArmComponent* SpringArm;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
@@ -36,6 +36,12 @@ protected:
 	float JumpImpulse = 500.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 MaxJumpCount= 1;
+	UPROPERTY(EditAnywhere, Category = "ChangeCamera")
+	TArray<AActor*> FixedCameras;
+
+	int32 CurrentCameraIndex = 0;
+
+	void SwitchCamera();
 
 
 public:	

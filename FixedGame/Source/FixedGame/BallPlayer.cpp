@@ -3,6 +3,7 @@
 
 #include "BallPlayer.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/GameplayStatics.h"
 #include "Camera/CameraComponent.h"
 
 // Sets default values
@@ -10,28 +11,42 @@ ABallPlayer::ABallPlayer()
 {
 	PrimaryActorTick.bCanEverTick = false;
 
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>("Mesh");
-	SpringArm = CreateDefaultSubobject<USpringArmComponent>("SpringArm");
-	Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
+	PlayerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PlayerMesh"));
+	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
+	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 
 
-	RootComponent = Mesh;
+	RootComponent = PlayerMesh;
 
-	SpringArm->SetupAttachment(Mesh);
+	SpringArm->SetupAttachment(PlayerMesh);
 	
 	Camera->SetupAttachment(SpringArm);
 
-	Mesh->SetSimulatePhysics(true);
+	PlayerMesh->SetSimulatePhysics(true);
 
-	Mesh->OnComponentHit.AddDynamic(this, &ABallPlayer::OnHit);
+	PlayerMesh->OnComponentHit.AddDynamic(this, &ABallPlayer::OnHit);
 }
 
 // Called when the game starts or when spawned
 void ABallPlayer::BeginPlay()
 {
 	Super::BeginPlay();
-	MoveForce *= Mesh->GetMass();
-	JumpImpulse *= Mesh->GetMass();
+	MoveForce *= PlayerMesh->GetMass();
+	JumpImpulse *= PlayerMesh->GetMass();
+
+
+	if (!Camera)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Camera is NULL in BeginPlay!"));
+	}
+	if (!PlayerMesh)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Mesh is NULL in BeginPlay!"));
+	}
+	if (!SpringArm)
+	{
+		UE_LOG(LogTemp, Error, TEXT("SpringArm is NULL in BeginPlay!"));
+	}
 	
 }
 
@@ -40,22 +55,40 @@ void ABallPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-
-	InputComponent->BindAxis("MoveForward", this, &ABallPlayer::MoveForward);
-	InputComponent->BindAxis("MoveRight", this, &ABallPlayer::MoveRight);
-	InputComponent->BindAction("Jump", IE_Pressed, this, &ABallPlayer::Jump);
+	PlayerInputComponent->BindAction("SwitchCamera", IE_Pressed, this, &ABallPlayer::SwitchCamera);
+	PlayerInputComponent->BindAxis("MoveForward", this, &ABallPlayer::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &ABallPlayer::MoveRight);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ABallPlayer::Jump);
 }
 
 void ABallPlayer::MoveRight(float Value)
 {
+	if (!Camera || !PlayerMesh)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Camera or PlayerMesh is NULL in MoveRight!"));
+		return;
+	}
+
 	const FVector Right = Camera->GetRightVector() * MoveForce * Value;
-	Mesh->AddForce(Right);
+	PlayerMesh->AddForce(Right);
 }
 
 void ABallPlayer::MoveForward(float Value)
 {
+	if (!Camera)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Camera is NULL in MoveForward!"));
+		return;
+	}
+
+	if (!PlayerMesh)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Mesh is NULL in MoveForward!"));
+		return;
+	}
+
 	const FVector Forward = Camera->GetForwardVector() * MoveForce * Value;
-	Mesh->AddForce(Forward);
+	PlayerMesh->AddForce(Forward);
 }
 
 void ABallPlayer::Jump()
@@ -65,7 +98,7 @@ void ABallPlayer::Jump()
 		return;
 	}
 
-	Mesh->AddImpulse(FVector(0, 0, JumpImpulse));
+	PlayerMesh->AddImpulse(FVector(0, 0, JumpImpulse));
 
 	JumpCount++;
 }
@@ -77,6 +110,19 @@ void ABallPlayer::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 	if (HitDirection > 0)
 	{
 		JumpCount = 0;
+	}
+}
+
+void ABallPlayer::SwitchCamera()
+{
+	if (FixedCameras.Num() == 0) return;
+
+	CurrentCameraIndex = (CurrentCameraIndex + 1) % FixedCameras.Num();
+
+	APlayerController* PC = UGameplayStatics::GetPlayerController(this, 0);
+	if (PC && FixedCameras[CurrentCameraIndex])
+	{
+		PC->SetViewTargetWithBlend(FixedCameras[CurrentCameraIndex], 0.5f);
 	}
 }
 
