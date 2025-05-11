@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Item.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class FIXEDGAME_API AItem : public AActor
 {
 	GENERATED_BODY()
@@ -27,5 +27,6 @@ protected:
 
 	UFUNCTION(BlueprintNativeEvent)
 	void Collected();
+	virtual void Collected_Implementation();
 
 };

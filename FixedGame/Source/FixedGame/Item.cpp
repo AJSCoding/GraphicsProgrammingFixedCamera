@@ -2,6 +2,7 @@
 
 
 #include "Item.h"
+#include "BallGameModeBase.h"
 #include "FixedGame/BallPlayer.h"
 
 // Sets default values
@@ -61,5 +62,10 @@ void AItem::OverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* Other
 
 void AItem::Collected_Implementation()
 {
+    ABallGameModeBase* GameMode = Cast<ABallGameModeBase>(GetWorld()->GetAuthGameMode());
 
+    if (GameMode)
+    {
+        GameMode-> ItemCollected();
+    }
 }

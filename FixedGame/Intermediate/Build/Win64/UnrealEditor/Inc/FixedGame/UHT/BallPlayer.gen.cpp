@@ -113,8 +113,10 @@ struct Z_Construct_UClass_ABallPlayer_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
 		{ "HideCategories", "Navigation" },
 		{ "IncludePath", "BallPlayer.h" },
+		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "BallPlayer.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_PlayerMesh_MetaData[] = {
@@ -227,10 +229,10 @@ ABallPlayer::~ABallPlayer() {}
 struct Z_CompiledInDeferFile_FID_UnrealProjects_Jasons_GraphicsProgrammingFixedCamera_FixedGame_Source_FixedGame_BallPlayer_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABallPlayer, ABallPlayer::StaticClass, TEXT("ABallPlayer"), &Z_Registration_Info_UClass_ABallPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABallPlayer), 3534429937U) },
+		{ Z_Construct_UClass_ABallPlayer, ABallPlayer::StaticClass, TEXT("ABallPlayer"), &Z_Registration_Info_UClass_ABallPlayer, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABallPlayer), 2014665816U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProjects_Jasons_GraphicsProgrammingFixedCamera_FixedGame_Source_FixedGame_BallPlayer_h_4276353766(TEXT("/Script/FixedGame"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UnrealProjects_Jasons_GraphicsProgrammingFixedCamera_FixedGame_Source_FixedGame_BallPlayer_h_2187681520(TEXT("/Script/FixedGame"),
 	Z_CompiledInDeferFile_FID_UnrealProjects_Jasons_GraphicsProgrammingFixedCamera_FixedGame_Source_FixedGame_BallPlayer_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UnrealProjects_Jasons_GraphicsProgrammingFixedCamera_FixedGame_Source_FixedGame_BallPlayer_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

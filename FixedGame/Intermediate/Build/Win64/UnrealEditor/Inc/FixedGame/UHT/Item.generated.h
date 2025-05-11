@@ -18,7 +18,6 @@ struct FHitResult;
 #define FIXEDGAME_Item_generated_h
 
 #define FID_UnrealProjects_Jasons_GraphicsProgrammingFixedCamera_FixedGame_Source_FixedGame_Item_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual void Collected_Implementation(); \
 	DECLARE_FUNCTION(execCollected); \
 	DECLARE_FUNCTION(execOverlapBegin);
 

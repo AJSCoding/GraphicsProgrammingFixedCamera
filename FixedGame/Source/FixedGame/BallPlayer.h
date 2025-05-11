@@ -10,7 +10,7 @@ class UCameraComponent;
 class USpringArmComponent;
 
 
-UCLASS()
+UCLASS(Blueprintable)
 class FIXEDGAME_API ABallPlayer : public APawn
 {
 	GENERATED_BODY()
